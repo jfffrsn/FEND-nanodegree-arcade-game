@@ -1,6 +1,6 @@
 let game = true;
 
-var Enemy = function(x,y) {
+const Enemy = function(x,y) {
     this.x = x;
     this.y = y;
     this.height = 65;
@@ -12,7 +12,7 @@ var Enemy = function(x,y) {
 
 
 Enemy.prototype.update = function(dt) {
-    //this.x += 150 * dt;
+
     if (this.x > ctx.canvas.width + this.width) {
         this.x = -200 * Math.floor(Math.random() * 4) + 1;
     } else {
@@ -20,9 +20,9 @@ Enemy.prototype.update = function(dt) {
     }
 
     //check collison with player
-    //within proximity (px,py,pw,ph,ex,ey,ew,eh )
     if (collision(player.x, player.y, player.width, player.height, this.x, this.y, this.width, this.height)) {
         this.collision = true;
+        console.log('collision');
         if (player) {
             player.x = 202;
             player.y = 400;
@@ -40,9 +40,12 @@ Enemy.prototype.render = function() {
 
 
 //player
-var Player = function(x,y,sprite) {
-    this.x = x;
-    this.y = y;
+const Player = function(x,y,sprite) {
+    this.startX = x;
+    this.startY = y;
+    this.x = this.startX;
+    this.y = this.startY;
+    this.sprite = sprite;
     this.height = 75;
     this.width = 65;
     this.sprite = sprite;
@@ -104,10 +107,14 @@ function collision (px, py, pw, ph, ex, ey, ew, eh) {
 };
 
 function won() {
-    console.log('wonnnnnnnnnnnnnnnnnnnn');
+    console.log('won');
     reset();
 };
 
 function reset() {
+    //clear enemies
     allEnemies =[];
+    //move player to starting position
+    player.x = player.startX;
+    player.y = player.startY;
 }
