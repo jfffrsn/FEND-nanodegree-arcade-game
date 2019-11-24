@@ -127,6 +127,7 @@ function reset() {
  function toggleVictoryModal() {
     const modal = document.querySelector('.modal');
     modal.classList.toggle('hide');
+    document.querySelector('.modal__button').focus();
 }
 
 
