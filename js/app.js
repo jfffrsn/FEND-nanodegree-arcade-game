@@ -24,8 +24,8 @@ Enemy.prototype.update = function(dt) {
         this.collision = true;
         console.log('collision');
         if (player) {
-            player.x = 202;
-            player.y = 400;
+            player.x = player.startX;
+            player.y = player.startY;
         }
     } else {
         this.collision = false;
@@ -62,8 +62,8 @@ Player.prototype.update = function(dt) {
 
 
 Player.prototype.handleInput = function(direction) {
-    const horizontal = 101,
-          vertical = 83;
+    const horizontal = 101;
+    const vertical = 83;
 
     if ( direction === 'left' && this.x - horizontal >= 0 ) {
         this.x -= horizontal;
@@ -74,6 +74,7 @@ Player.prototype.handleInput = function(direction) {
     } else if ( direction === 'up' && this.y - vertical > 0 - player.height ) {
         this.y -= vertical;
     }
+
 };
 
 Player.prototype.render = function() {
