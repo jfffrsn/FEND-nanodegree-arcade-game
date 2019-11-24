@@ -95,14 +95,19 @@ document.addEventListener('keyup', function(e) {
 const enemyPosition = [55,140,230];
 
 const player = new Player(202, 400, 'images/char-boy.png');
-const allEnemies = enemyPosition.map((y, index) =>{
+let allEnemies = enemyPosition.map((y, index) =>{
     return new Enemy( (-200 * (index + 1)), y );
 });
-
-let won = function() {
-    console.log('wonnnnnnnnnnnnnnnnnnnn');
-};
 
 function collision (px, py, pw, ph, ex, ey, ew, eh) {
     return (Math.abs(px - ex) * 2 < pw + ew) && (Math.abs(py - ey) * 2 < ph + eh );
 };
+
+function won() {
+    console.log('wonnnnnnnnnnnnnnnnnnnn');
+    reset();
+};
+
+function reset() {
+    allEnemies =[];
+}
