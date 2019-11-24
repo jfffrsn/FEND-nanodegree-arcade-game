@@ -35,6 +35,7 @@ body {
     top: 20%;
     border-radius: 20px;
     overflow: hidden;
+    text-align: center;
 
     /* Center modal */
     transform: translateX(-50%)
