@@ -97,8 +97,8 @@ document.addEventListener('keyup', function(e) {
 
 
 const enemyPosition = [55,140,230];
-
 const player = new Player(202, 400, 'images/char-boy.png');
+
 let allEnemies = enemyPosition.map((y, index) =>{
     return new Enemy( (-200 * (index + 1)), y );
 });
@@ -109,6 +109,7 @@ function collision (px, py, pw, ph, ex, ey, ew, eh) {
 
 function won() {
     console.log('won');
+    toggleVictoryModal();
     reset();
 };
 
@@ -118,4 +119,25 @@ function reset() {
     //move player to starting position
     player.x = player.startX;
     player.y = player.startY;
+    //window.location.reload(true);
 }
+
+
+ // Handle victory modal's on/off state
+ function toggleVictoryModal() {
+    const modal = document.querySelector('.modal');
+    modal.classList.toggle('hide');
+}
+
+
+//restart
+// Restart
+let restartButton = document.querySelector('.modal__button');
+
+function restartGame(){
+    restartButton.addEventListener('click', function(){
+        window.location.reload(true);
+    });
+};
+
+restartGame();

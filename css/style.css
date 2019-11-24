@@ -1,3 +1,76 @@
+html,
 body {
-    text-align: center;
+    margin: 0;
+
+}
+
+body {
+    background-color: #4caf50;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(25, 118, 210, 0.8);
+}
+
+    .hide {
+        display: none;
+    }
+
+.modal__content {
+    position: relative;
+    width: 400px;
+    background: #e9e9e9;
+    left: 50%;
+    top: 20%;
+    border-radius: 20px;
+    overflow: hidden;
+
+    /* Center modal */
+    transform: translateX(-50%)
+}
+
+.modal__header {
+    padding: .5rem 0;
+    background-color: #E91E63;
+    color: white;
+
+}
+
+.modal__body {
+    padding: 1.5rem;
+    background-color: #fff;
+    font-size: 1.1rem;
+}
+
+.modal__buttons {
+    padding: 1.5rem;
+}
+
+.modal__button {
+    padding: 1rem;
+    border: 0;
+    border-radius: 6px;
+    background: #2196f3;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.modal__button:hover {
+    color: #fff;
+    background-color: #1976d2;
+
 }
