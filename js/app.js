@@ -1,6 +1,4 @@
-let debug = false;
 let game = true;
-
 
 var Enemy = function(x,y) {
     this.x = x;
@@ -53,7 +51,10 @@ var Player = function(x,y,sprite) {
 
 
 Player.prototype.update = function(dt) {
-
+    if (game && player.y < 40 ) {
+        game = false;
+        won();
+    }
 };
 
 
@@ -98,6 +99,9 @@ const allEnemies = enemyPosition.map((y, index) =>{
     return new Enemy( (-200 * (index + 1)), y );
 });
 
+let won = function() {
+    console.log('wonnnnnnnnnnnnnnnnnnnn');
+};
 
 function collision (px, py, pw, ph, ex, ey, ew, eh) {
     return (Math.abs(px - ex) * 2 < pw + ew) && (Math.abs(py - ey) * 2 < ph + eh );
