@@ -23,38 +23,41 @@ body {
     background: rgba(25, 118, 210, 0.8);
 }
 
-    .hide {
-        display: none;
-    }
+.hide {
+    display: none;
+}
 
 .modal-content {
     position: relative;
     width: 400px;
-    background: #e9e9e9;
+    background-color: #fff;
     left: 50%;
     top: 20%;
     border-radius: 20px;
     overflow: hidden;
     text-align: center;
-
-    /* Center modal */
     transform: translateX(-50%)
 }
 
 .modal-header {
     padding: .5rem 0;
-    background-color: #E91E63;
-    color: white;
+    background-color: #4caf50;
 
+
+}
+.modal-header h1 {
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 .modal-body {
     padding: 1.5rem;
-    background-color: #fff;
     font-size: 1.1rem;
 }
 
-.modal-buttons {
+.modal-footer {
     padding: 1.5rem;
 }
 
@@ -74,4 +77,27 @@ body {
     color: #fff;
     background-color: #1976d2;
 
+}
+
+
+.game-block {
+    display: flex;
+    flex-flow: column wrap;
+}
+.game-header {
+    text-align: center;
+}
+.game-header h1 {
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 2rem 0 .25rem 0;
+    text-transform: uppercase;
+}
+
+.game-header h2 {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #000;
+    margin: 0 0 -1rem 0;
 }
