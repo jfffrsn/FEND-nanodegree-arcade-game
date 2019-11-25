@@ -35,8 +35,6 @@ class Enemy {
     }
 }
 
-
-
 // Player
 class Player {
     constructor(x, y, sprite) {
@@ -76,7 +74,6 @@ class Player {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
 }
-
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
