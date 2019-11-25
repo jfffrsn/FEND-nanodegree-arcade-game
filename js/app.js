@@ -1,5 +1,6 @@
 let game = true;
 
+//Enemy
 const Enemy = function(x,y) {
     this.x = x;
     this.y = y;
@@ -9,10 +10,7 @@ const Enemy = function(x,y) {
     this.collision = false;
 };
 
-
-
 Enemy.prototype.update = function(dt) {
-
     if (this.x > ctx.canvas.width + this.width) {
         this.x = -200 * Math.floor(Math.random() * 4) + 1;
     } else {
@@ -22,7 +20,6 @@ Enemy.prototype.update = function(dt) {
     //check collison with player
     if (collision(player.x, player.y, player.width, player.height, this.x, this.y, this.width, this.height)) {
         this.collision = true;
-        console.log('collision');
         if (player) {
             player.x = player.startX;
             player.y = player.startY;
@@ -39,7 +36,7 @@ Enemy.prototype.render = function() {
 
 
 
-//player
+//Player
 const Player = function(x,y,sprite) {
     this.startX = x;
     this.startY = y;
@@ -48,19 +45,18 @@ const Player = function(x,y,sprite) {
     this.sprite = sprite;
     this.height = 75;
     this.width = 65;
-    this.sprite = sprite;
 };
 
 
-
+//Update Player
 Player.prototype.update = function(dt) {
     if (game && player.y < 40 ) {
         game = false;
-        won();
+        gameWon();
     }
 };
 
-
+//Player movements
 Player.prototype.handleInput = function(direction) {
     const horizontal = 101;
     const vertical = 83;
@@ -80,8 +76,6 @@ Player.prototype.handleInput = function(direction) {
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
-
-
 
 
 document.addEventListener('keyup', function(e) {
@@ -110,15 +104,15 @@ collision = (px, py, pw, ph, ex, ey, ew, eh) => {
 
 
 
-
-won = () => {
-    console.log('won');
+//Notify player they won
+gameWon = () => {
+    console.log('gameWon');
     toggleWinModal();
     resetBoard();
 };
 
 
-
+//Cleanup the board
 resetBoard = () => {
         //clear enemies
         allEnemies =[];
@@ -128,7 +122,7 @@ resetBoard = () => {
   };
 
 
- // Handle Win modal's on/off state
+ // Handle Win modal visibility
 toggleWinModal = () => {
     const modal = document.querySelector('.modal');
     modal.classList.toggle('hide');
@@ -136,8 +130,8 @@ toggleWinModal = () => {
 }
 
 
-//restart
-(function restartGamez() {
+//Restart the game
+(function restartGame() {
     const restartButton = document.querySelector('.modal-button');
     restartButton.addEventListener('click', function(){
         window.location.reload(true);
