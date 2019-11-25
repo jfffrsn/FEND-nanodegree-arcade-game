@@ -106,7 +106,6 @@ collision = (px, py, pw, ph, ex, ey, ew, eh) => {
 
 // Notify player they won
 gameWon = () => {
-    console.log('gameWon');
     toggleWinModal();
     resetBoard();
 };
