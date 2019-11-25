@@ -14,15 +14,14 @@ Enemy.prototype.update = function(dt) {
     if (this.x > ctx.canvas.width + this.width) {
         this.x = -200 * Math.floor(Math.random() * 4) + 1;
     } else {
-        this.x += 150 * dt;
+        this.x += 200 * dt;
     }
 
     //check collison with player
     if (collision(player.x, player.y, player.width, player.height, this.x, this.y, this.width, this.height)) {
         this.collision = true;
         if (player) {
-            player.x = player.startX;
-            player.y = player.startY;
+            resetPlayer();
         }
     } else {
         this.collision = false;
@@ -85,12 +84,11 @@ document.addEventListener('keyup', function(e) {
         39: 'right',
         40: 'down'
     };
-
     player.handleInput(allowedKeys[e.keyCode]);
 });
 
 
-const enemyPosition = [55,140,230];
+const enemyPosition = [60,144,228,312];
 const player = new Player(202, 400, 'images/char-boy.png');
 
 let allEnemies = enemyPosition.map((y, index) =>{
@@ -110,14 +108,16 @@ gameWon = () => {
     resetBoard();
 };
 
+//Reset player position
+resetPlayer = () => {
+    player.x = player.startX;
+    player.y = player.startY;
+};
 
 //Cleanup the board
 resetBoard = () => {
-        //clear enemies
         allEnemies =[];
-        //move player to starting position
-        player.x = player.startX;
-        player.y = player.startY;
+        resetPlayer();
   };
 
 
