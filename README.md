@@ -8,7 +8,7 @@ demo: https://jfffrsn.github.io/FEND-nanodegree-arcade-game/
 
 Using this [rubric](https://review.udacity.com/#!/rubrics/15/view)
 
-## From the grass to the water
+## Playing the game
 
 The player starts his perilous journey on the grass, facing 4 rows of bugs. 
 
