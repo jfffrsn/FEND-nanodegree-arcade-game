@@ -97,11 +97,10 @@ let allEnemies = enemyPosition.map((y, index) =>{
     return new Enemy( (-200 * (index + 1)), y );
 });
 
+//Collision with enemy
 collision = (px, py, pw, ph, ex, ey, ew, eh) => {
     return (Math.abs(px - ex) * 2 < pw + ew) && (Math.abs(py - ey) * 2 < ph + eh );
 };
-
-
 
 
 //Notify player they won
@@ -122,13 +121,12 @@ resetBoard = () => {
   };
 
 
- // Handle Win modal visibility
+ // Handle win modal
 toggleWinModal = () => {
     const modal = document.querySelector('.modal');
     modal.classList.toggle('hide');
     document.querySelector('.modal-button').focus();
 }
-
 
 //Restart the game
 (function restartGame() {
