@@ -39,7 +39,7 @@ body {
     transform: translateX(-50%)
 }
 
-a .modal-header {
+.modal-header {
     padding: .5rem 0;
     background-color: #4caf50;
 
