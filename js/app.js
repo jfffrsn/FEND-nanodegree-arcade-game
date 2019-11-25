@@ -97,7 +97,7 @@ document.addEventListener('keyup', function (e) {
 // Place the player object in a variable called player
 const enemyPosition = [60, 144, 228, 312];
 const player = new Player(202, 400, 'images/char-boy.png');
-let allEnemies = enemyPosition.map((y, index) => new Enemy((-200 * (index + 1)), y));
+let allEnemies = enemyPosition.map((y, i) => new Enemy((-200 * (i + 1)), y));
 
 //Collision with enemy
 collision = (px, py, pw, ph, ex, ey, ew, eh) => {
@@ -106,6 +106,7 @@ collision = (px, py, pw, ph, ex, ey, ew, eh) => {
 
 // Notify player they won
 gameWon = () => {
+
     toggleWinModal();
     resetBoard();
 };
