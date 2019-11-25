@@ -4,9 +4,9 @@
 
 demo: https://jfffrsn.github.io/FEND-nanodegree-arcade-game/
 
-## Instructions
+## Project Instructions
 
-Using this [rubric](https://review.udacity.com/#!/rubrics/15/view)
+[rubric](https://review.udacity.com/#!/rubrics/15/view)
 
 ## Playing the game
 
