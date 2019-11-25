@@ -52,17 +52,30 @@ class Player {
         }
     }
     // Player movements
-    handleInput(direction) {
-        const horizontal = 101;
-        const vertical = 83;
-        if (direction === 'left' && this.x - horizontal >= 0) {
-            this.x -= horizontal;
-        } else if (direction === 'right' && this.x + horizontal < ctx.canvas.width) {
-            this.x += horizontal;
-        } else if (direction === 'down' && this.y + vertical < ctx.canvas.height - 200) {
-            this.y += vertical;
-        } else if (direction === 'up' && this.y - vertical > 0 - player.height) {
-            this.y -= vertical;
+    handleInput(movement) {
+        const moveX = 101;
+        const moveY = 83;
+        switch (movement) {
+            case 'left':
+                if (movement === 'left' && this.x - moveX >= 0) {
+                    this.x -= moveX;
+                }
+                break;
+            case 'right':
+                if (movement === 'right' && this.x + moveX < ctx.canvas.width) {
+                    this.x += moveX;
+                }
+                break;
+            case 'down':
+                if (movement === 'down' && this.y + moveY < ctx.canvas.height - 200) {
+                    this.y += moveY;
+                }
+                break;
+            case 'up':
+                if (movement === 'up' && this.y - moveY > 0 - player.height) {
+                    this.y -= moveY;
+                }
+                break;
         }
     }
     render() {
