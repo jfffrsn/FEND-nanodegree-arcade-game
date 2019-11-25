@@ -94,7 +94,6 @@ collision = (px, py, pw, ph, ex, ey, ew, eh) => {
     return (Math.abs(px - ex) * 2 < pw + ew) && (Math.abs(py - ey) * 2 < ph + eh);
 };
 
-
 // Notify player they won
 gameWon = () => {
     console.log('gameWon');
@@ -113,7 +112,6 @@ resetBoard = () => {
     allEnemies = [];
     resetPlayer();
 };
-
 
 // Handle win modal
 toggleWinModal = () => {
