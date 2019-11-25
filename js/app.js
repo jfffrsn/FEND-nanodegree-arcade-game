@@ -1,5 +1,3 @@
-let game = true;
-
 // Enemies our player must avoid
 class Enemy {
     constructor(x, y) {
@@ -46,8 +44,7 @@ class Player {
     }
     // Update Player
     update(dt) {
-        if (game && player.y < 40) {
-            game = false;
+        if (player.y < 40) {
             gameWon();
         }
     }
