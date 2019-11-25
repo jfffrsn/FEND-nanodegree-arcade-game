@@ -14,8 +14,7 @@ class Enemy {
     update(dt) {
         if (this.x > ctx.canvas.width + this.width) {
             this.x = -200 * Math.floor(Math.random() * 4) + 1;
-        }
-        else {
+        } else {
             this.x += 200 * dt;
         }
         // Check collison with player
@@ -24,8 +23,7 @@ class Enemy {
             if (player) {
                 resetPlayer();
             }
-        }
-        else {
+        } else {
             this.collision = false;
         }
     }
@@ -59,14 +57,11 @@ class Player {
         const vertical = 83;
         if (direction === 'left' && this.x - horizontal >= 0) {
             this.x -= horizontal;
-        }
-        else if (direction === 'right' && this.x + horizontal < ctx.canvas.width) {
+        } else if (direction === 'right' && this.x + horizontal < ctx.canvas.width) {
             this.x += horizontal;
-        }
-        else if (direction === 'down' && this.y + vertical < ctx.canvas.height - 200) {
+        } else if (direction === 'down' && this.y + vertical < ctx.canvas.height - 200) {
             this.y += vertical;
-        }
-        else if (direction === 'up' && this.y - vertical > 0 - player.height) {
+        } else if (direction === 'up' && this.y - vertical > 0 - player.height) {
             this.y -= vertical;
         }
     }
@@ -77,7 +72,7 @@ class Player {
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
-document.addEventListener('keyup', function(e) {
+document.addEventListener('keyup', function (e) {
     var allowedKeys = {
         37: 'left',
         38: 'up',
@@ -90,13 +85,13 @@ document.addEventListener('keyup', function(e) {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-const enemyPosition = [60,144,228,312];
+const enemyPosition = [60, 144, 228, 312];
 const player = new Player(202, 400, 'images/char-boy.png');
-let allEnemies = enemyPosition.map((y, index) => new Enemy( (-200 * (index + 1)), y ));
+let allEnemies = enemyPosition.map((y, index) => new Enemy((-200 * (index + 1)), y));
 
 //Collision with enemy
 collision = (px, py, pw, ph, ex, ey, ew, eh) => {
-    return (Math.abs(px - ex) * 2 < pw + ew) && (Math.abs(py - ey) * 2 < ph + eh );
+    return (Math.abs(px - ex) * 2 < pw + ew) && (Math.abs(py - ey) * 2 < ph + eh);
 };
 
 
@@ -115,12 +110,12 @@ resetPlayer = () => {
 
 // Cleanup the board
 resetBoard = () => {
-        allEnemies =[];
-        resetPlayer();
+    allEnemies = [];
+    resetPlayer();
 };
 
 
- // Handle win modal
+// Handle win modal
 toggleWinModal = () => {
     const modal = document.querySelector('.modal');
     modal.classList.toggle('hide');
@@ -130,7 +125,7 @@ toggleWinModal = () => {
 // Restart the game
 (function restartGame() {
     const restartButton = document.querySelector('.modal-button');
-    restartButton.addEventListener('click', function(){
+    restartButton.addEventListener('click', function () {
         window.location.reload(true);
     });
 })();
