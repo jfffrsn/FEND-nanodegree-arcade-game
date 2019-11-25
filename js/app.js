@@ -118,7 +118,7 @@ resetPlayer = () => {
 resetBoard = () => {
         allEnemies =[];
         resetPlayer();
-  };
+};
 
 
  // Handle win modal
@@ -126,7 +126,7 @@ toggleWinModal = () => {
     const modal = document.querySelector('.modal');
     modal.classList.toggle('hide');
     document.querySelector('.modal-button').focus();
-}
+};
 
 //Restart the game
 (function restartGame() {
