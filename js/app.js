@@ -103,28 +103,33 @@ let allEnemies = enemyPosition.map((y, index) =>{
     return new Enemy( (-200 * (index + 1)), y );
 });
 
-function collision (px, py, pw, ph, ex, ey, ew, eh) {
+collision = (px, py, pw, ph, ex, ey, ew, eh) => {
     return (Math.abs(px - ex) * 2 < pw + ew) && (Math.abs(py - ey) * 2 < ph + eh );
 };
 
-function won() {
+
+
+
+
+won = () => {
     console.log('won');
-    toggleVictoryModal();
-    reset();
+    toggleWinModal();
+    resetBoard();
 };
 
-function reset() {
-    //clear enemies
-    allEnemies =[];
-    //move player to starting position
-    player.x = player.startX;
-    player.y = player.startY;
-    //window.location.reload(true);
-}
 
 
- // Handle victory modal's on/off state
- function toggleVictoryModal() {
+resetBoard = () => {
+        //clear enemies
+        allEnemies =[];
+        //move player to starting position
+        player.x = player.startX;
+        player.y = player.startY;
+  };
+
+
+ // Handle Win modal's on/off state
+toggleWinModal = () => {
     const modal = document.querySelector('.modal');
     modal.classList.toggle('hide');
     document.querySelector('.modal-button').focus();
@@ -132,13 +137,9 @@ function reset() {
 
 
 //restart
-// Restart
-let restartButton = document.querySelector('.modal-button');
-
-function restartGame(){
+(function restartGamez() {
+    const restartButton = document.querySelector('.modal-button');
     restartButton.addEventListener('click', function(){
         window.location.reload(true);
     });
-};
-
-restartGame();
+})();
