@@ -127,13 +127,13 @@ function reset() {
  function toggleVictoryModal() {
     const modal = document.querySelector('.modal');
     modal.classList.toggle('hide');
-    document.querySelector('.modal__button').focus();
+    document.querySelector('.modal-button').focus();
 }
 
 
 //restart
 // Restart
-let restartButton = document.querySelector('.modal__button');
+let restartButton = document.querySelector('.modal-button');
 
 function restartGame(){
     restartButton.addEventListener('click', function(){
