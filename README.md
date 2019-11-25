@@ -18,3 +18,8 @@ Use your keyboard arrow keys (up, down, left, right) to move your player up the 
 
 Once you reach the water, you win.
 
+## Resources used
+* https://fonts.google.com/specimen/IBM+Plex+Sans
+* https://knowledge.udacity.com/
+* https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
+* https://youtu.be/XEVnMgYblGc
