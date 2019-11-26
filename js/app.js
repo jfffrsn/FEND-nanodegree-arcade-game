@@ -32,7 +32,6 @@ class Enemy {
       width: this.width,
       height: this.height
     };
-    // Check for collisions, if playerBox intersects enemyBox, we have one
     if (
       playerBox.x < enemyBox.x + enemyBox.width &&
       playerBox.x + playerBox.width > enemyBox.x &&
