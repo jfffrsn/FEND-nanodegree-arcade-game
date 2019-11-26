@@ -114,11 +114,12 @@ document.addEventListener("keyup", function(e) {
 });
 
 // Now instantiate your objects.
-// Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-const enemyPosition = [60, 144, 228, 312];
-const player = new Player(202, 400, "images/char-boy.png");
-let allEnemies = enemyPosition.map((y, i) => new Enemy(-200 * (i + 1), y));
+const player = new Player(200, 400, "images/char-boy.png");
+
+// Place all enemy objects in an array called allEnemies
+const enemyYPos = [60, 144, 228, 312];
+let allEnemies = enemyYPos.map((y, i) => new Enemy(-200 * (i + 1), y));
 
 // Notify player they won
 gameWon = () => {
