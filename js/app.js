@@ -11,9 +11,9 @@ class Enemy {
   // Update the enemy's position, required method for game
   update(dt) {
     if (this.x > ctx.canvas.width + this.width) {
-      this.x = -200 * Math.floor(Math.random() * 4) + 1;
+      this.x = -100 * Math.floor(Math.random() * 10);
     } else {
-      this.x += 200 * dt;
+      this.x += 250 * dt;
     }
     // Check collison with player
     this.checkCollision();
