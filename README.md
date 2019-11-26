@@ -22,4 +22,5 @@ Once you reach the water, you win.
 * https://fonts.google.com/specimen/IBM+Plex+Sans
 * https://knowledge.udacity.com/
 * https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
 * https://youtu.be/XEVnMgYblGc
